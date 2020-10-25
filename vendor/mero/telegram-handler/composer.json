@@ -1,0 +1,53 @@
+{
+  "name": "mero/telegram-handler",
+  "description": "Monolog handler to send log by Telegram",
+  "keywords": [
+    "telegram",
+    "monolog",
+    "logging",
+    "log"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/merorafael/telegram-handler/issues",
+    "source": "https://github.com/merorafael/telegram-handler"
+  },
+  "authors": [
+    {
+      "name": "Rafael Mello",
+      "email": "merorafael@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-curl": "*",
+    "monolog/monolog": "^1.20"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.6",
+    "satooshi/php-coveralls": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mero\\Monolog\\": "src/Mero/Monolog"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mero\\Monolog\\": "tests/Mero/Monolog"
+    }
+  },
+  "suggest": {
+    "symfony/yaml": "Needed to use HtmlFormatter feature"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.3.x-dev"
+    }
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ]
+  }
+}

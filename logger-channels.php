@@ -2,7 +2,11 @@
 namespace Grav\Plugin;
 
 use Composer\Autoload\ClassLoader;
+use Grav\Common\Grav;
 use Grav\Common\Plugin;
+use Grav\Plugin\LoggerChannels\Handlers\HandlerFactory;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Logger;
 
 /**
  * Class LoggerChannelsPlugin
@@ -31,10 +35,9 @@ class LoggerChannelsPlugin extends Plugin
     }
 
     /**
-    * Composer autoload.
-    *is
-    * @return ClassLoader
-    */
+     * Composer autoload.
+     * @return ClassLoader
+     */
     public function autoload(): ClassLoader
     {
         return require __DIR__ . '/vendor/autoload.php';
@@ -47,12 +50,23 @@ class LoggerChannelsPlugin extends Plugin
     {
         // Don't proceed if we are in the admin plugin
         if ($this->isAdmin()) {
-            return;
+            //return;
         }
 
         // Enable the main events we are interested in
         $this->enable([
             // Put your main events here
         ]);
+
+        /** @var Logger $log */
+        $log = Grav::instance()['log'];
+
+        foreach ($this->config()['handlers'] as $channel => $configs) {
+            foreach ($configs as $config) {
+                $handler = HandlerFactory::create($channel, $config)->getHandler();
+                $handler->setFormatter(new LineFormatter());
+                $log->pushHandler($handler);
+            }
+        }
     }
 }

@@ -30,7 +30,45 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
-    text_var:
-      type: text
-      label: PLUGIN_LOGGER_CHANNELS.TEXT_VARIABLE
-      help: PLUGIN_LOGGER_CHANNELS.TEXT_VARIABLE_HELP
+    handlers.fieldset.discord:
+      type: fieldset
+      title: Discord
+      collapsed: true
+      collapsible: true
+      fields:
+        handlers.discord:
+          type: list
+          label: Handlers
+          fields:
+            .webhook:
+              type: url
+              label: Webhook
+            .level:
+              type: select
+              label: Level
+              default: INFO
+              options:
+                'DEBUG': Debug
+                'INFO': Info (Default)
+    handlers.fieldset.telegram:
+      type: fieldset
+      title: Telegram
+      collapsed: true
+      collapsible: true
+      fields:
+        handlers.telegram:
+          type: list
+          label: Handlers
+          fields:
+            .token:
+              type: text
+              label: Token
+            .chatid:
+              type: text
+              label: Chat id
+            .level:
+              type: select
+              label: Level
+              default: INFO
+              options:
+                'DEBUG': Debug
