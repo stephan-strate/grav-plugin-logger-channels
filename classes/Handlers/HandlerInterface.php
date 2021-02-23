@@ -17,6 +17,4 @@ interface HandlerInterface
      * @return AbstractProcessingHandler
      */
     public function getHandler();
-
-    public static function getConfigs();
 }

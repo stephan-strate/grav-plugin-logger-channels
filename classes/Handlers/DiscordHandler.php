@@ -12,14 +12,7 @@ class DiscordHandler extends BaseHandler
     public function initHandler(array $options)
     {
         /** @var Config $config */
-        $config = Grav::instance()['config'];
+        $config = Grav::instance()->get('config');
         $this->handler = new \DiscordHandler\DiscordHandler($options['webhook'], 'grav', $config->get('site.title'), $options['level']);
-    }
-
-    public static function getConfigs()
-    {
-        /** @var Config $config */
-        $config = Grav::instance()['config'];
-        return $config->get('plugin.logger-channels.handlers.discord', []);
     }
 }

@@ -5,7 +5,6 @@ use Composer\Autoload\ClassLoader;
 use Grav\Common\Grav;
 use Grav\Common\Plugin;
 use Grav\Plugin\LoggerChannels\Handlers\HandlerFactory;
-use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
 
 /**
@@ -28,8 +27,8 @@ class LoggerChannelsPlugin extends Plugin
     {
         return [
             'onPluginsInitialized' => [
-                ['autoload', 100000], // TODO: Remove when plugin requires Grav >=1.7
-                ['onPluginsInitialized', 0]
+                ['autoload', 100001], // TODO: Remove when plugin requires Grav >=1.7
+                ['onPluginsInitialized', 100000],
             ]
         ];
     }
@@ -58,14 +57,17 @@ class LoggerChannelsPlugin extends Plugin
             // Put your main events here
         ]);
 
-        /** @var Logger $log */
-        $log = Grav::instance()['log'];
+        /** @var Logger $logger */
+        $logger = Grav::instance()->get('log');
 
-        foreach ($this->config()['handlers'] as $channel => $configs) {
+        if ($this->config->value('plugins.logger-channels.remove_default_handlers', false)) {
+            $logger->setHandlers([]);
+        }
+
+        foreach ($this->config->value('plugins.logger-channels.handlers', []) as $channel => $configs) {
             foreach ($configs as $config) {
                 $handler = HandlerFactory::create($channel, $config)->getHandler();
-                $handler->setFormatter(new LineFormatter());
-                $log->pushHandler($handler);
+                $logger->pushHandler($handler);
             }
         }
     }

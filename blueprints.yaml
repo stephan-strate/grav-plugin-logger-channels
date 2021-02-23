@@ -1,15 +1,14 @@
 name: Logger Channels
 slug: logger-channels
 type: plugin
-version: 0.1.0
-description: Logger channels
-icon: plug
+version: 1.0.0
+description: Add or replace logger handlers and targets for any grav system.
+icon: paperclip
 author:
   name: Stephan Strate
-  email: hi@stephan-strate.de
+  email: hello@stephan.codes
 homepage: https://github.com/stephan-strate/grav-plugin-logger-channels
-demo: http://demo.yoursite.com
-keywords: grav, plugin, etc
+keywords: grav, plugin, log, monolog
 bugs: https://github.com/stephan-strate/grav-plugin-logger-channels/issues
 docs: https://github.com/stephan-strate/grav-plugin-logger-channels/blob/develop/README.md
 license: MIT
@@ -30,6 +29,16 @@ form:
         0: PLUGIN_ADMIN.DISABLED
       validate:
         type: bool
+
+    remove_default_handlers:
+      type: toggle
+      label: Remove default handler
+      default: 0
+      highlight: 0
+      options:
+        1: PLUGIN_ADMIN.YES
+        0: PLUGIN_ADMIN.NO
+
     handlers.fieldset.discord:
       type: fieldset
       title: Discord
@@ -47,9 +56,8 @@ form:
               type: select
               label: Level
               default: INFO
-              options:
-                'DEBUG': Debug
-                'INFO': Info (Default)
+              data-options@: Grav\Plugin\LoggerChannels\Utils::levelsOptions
+
     handlers.fieldset.telegram:
       type: fieldset
       title: Telegram
@@ -70,5 +78,4 @@ form:
               type: select
               label: Level
               default: INFO
-              options:
-                'DEBUG': Debug
+              data-options@: Grav\Plugin\LoggerChannels\Utils::levelsOptions

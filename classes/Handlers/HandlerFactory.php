@@ -13,6 +13,7 @@ class HandlerFactory
     {
         $handlerClassname = 'Grav\\Plugin\\LoggerChannels\\Handlers\\' . ucfirst($handler) . 'Handler';
 
+        /** @var HandlerInterface $class */
         $class = new $handlerClassname();
         $class->initHandler($options);
         return $class;

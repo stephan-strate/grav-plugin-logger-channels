@@ -1,8 +1,10 @@
 # Logger Channels Plugin
 
-**This README.md file should be modified to describe the features, installation, configuration, and general usage of the plugin.**
+The **Logger Channels** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Add or replace logger handlers and targets for any grav system.
 
-The **Logger Channels** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Logger channels
+We currently support the following handlers (more can be added through pull requests):
+- Discord
+- Telegram
 
 ## Installation
 
@@ -38,19 +40,11 @@ Here is the default configuration and an explanation of available options:
 
 ```yaml
 enabled: true
+remove_default_handlers: false
 ```
 
 Note that if you use the Admin Plugin, a file with your configuration named logger-channels.yaml will be saved in the `user/config/plugins/`-folder once the configuration is saved in the Admin.
 
 ## Usage
 
-**Describe how to use the plugin.**
-
-## Credits
-
-**Did you incorporate third-party code? Want to thank somebody?**
-
-## To Do
-
-- [ ] Future plans, if any
-
+### Handlers
