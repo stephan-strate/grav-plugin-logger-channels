@@ -47,4 +47,61 @@ Note that if you use the Admin Plugin, a file with your configuration named logg
 
 ## Usage
 
+### Log Levels
+
+Grav uses [Monolog](https://github.com/Seldaek/monolog) as logger framework. So the log levels are inherited from this library. Here is a quick overview on valid log level values for configuration:
+
+| Level     | Value |
+| --------- | ----- |
+| Debug     | 100   |
+| Info      | 200   |
+| Notice    | 250   |
+| Warning   | 300   |
+| Error     | 400   |
+| Critical  | 500   |
+| Alert     | 550   |
+| Emergency | 600   |
+
 ### Handlers
+
+Handlers can be interpreted as targets for your log messages. They can usually be configured with a specific log level. That means you can eg. receive critical or emergency logs via email and debug/info logs to Discord. The combinations and configurations are endless. In the following chapter we will describe on how to set up the supported handlers.
+
+Supported handlers:
+- Discord
+- Telegram
+
+#### Discord
+
+Discord uses so called webhooks to receive messages for a specific channel. Create a webhook as described in the official [documentation](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks) and paste the url into the plugin configuration.
+
+Example:
+```yaml
+handlers.discord:
+  -
+    webhook: https://discord.com/api/webhooks/<id>
+    level: 100 # Debug
+```
+
+#### Telegram
+
+Telegram uses bots to send messages to defined chats. You can create your own bot (see [here](https://github.com/merorafael/monolog-telegram-handler)) and paste the access token and desired chat id into the plugin configuration.
+
+Example:
+```yaml
+handlers.telegram:
+  -
+    token: <token>
+    chatid: <chat_id>
+    level: 100 # Debug
+```
+
+## Credits
+
+[Monolog](https://github.com/Seldaek/monolog) has a lot of built-in handlers as well as a bunch of third-party ones. We do not want to re-invent the wheel here and just use some [third-party](https://github.com/Seldaek/monolog/wiki/Third-Party-Packages) handlers:
+
+- Discord: https://github.com/lefuturiste/monolog-discord-handler
+- Telegram: https://github.com/merorafael/monolog-telegram-handler
+
+## Known Limitations
+
+* As this is a regular plugin, the log handlers are initialized and applied after some errors already could have occured. But from my testing this was never a real problem.
