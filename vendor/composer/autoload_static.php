@@ -19,6 +19,7 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
+            'ParagonIE\\ConstantTime\\' => 23,
         ),
         'M' => 
         array (
@@ -31,6 +32,7 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'Grav\\Plugin\\LoggerChannels\\' => 27,
+            'Gelf\\' => 5,
         ),
         'D' => 
         array (
@@ -50,6 +52,10 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
         'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
+        ),
+        'ParagonIE\\ConstantTime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/paragonie/constant_time_encoding/src',
         ),
         'Monolog\\' => 
         array (
@@ -74,6 +80,10 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
         'Grav\\Plugin\\LoggerChannels\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',
+        ),
+        'Gelf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/graylog2/gelf-php/src/Gelf',
         ),
         'DiscordHandler\\' => 
         array (
