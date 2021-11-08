@@ -64,7 +64,7 @@ class GraylogHandler extends BaseHandler
         $formatter->setExtraFields($extraFields);
 
         // Setup handler
-        $this->handler = new GelfHandler($publisher);
+        $this->handler = new GelfHandler($publisher, $options['level']);
         $this->handler->setFormatter($formatter);
     }
 }
