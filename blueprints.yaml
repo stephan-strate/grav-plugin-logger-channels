@@ -79,3 +79,50 @@ form:
               label: Level
               default: INFO
               data-options@: Grav\Plugin\LoggerChannels\Utils::levelsOptions
+
+    handlers.fieldset.graylog:
+      type: fieldset
+      title: Graylog
+      collapsed: true
+      collapsible: true
+      fields:
+        handlers.graylog:
+          type: list
+          label: Handlers
+          fields:
+            .host:
+              type: text
+              label: Host or IP address
+              default: 127.0.0.1
+            .port:
+              type: number
+              label: Port number
+              default: 12201
+              validate:
+                type: number
+                min: 1
+                min: 65535
+            .protocol:
+              type: select
+              label: Protocol
+              default: udp
+              options:
+                tcp: TCP
+                udp: UDP
+            .extra_fields:
+              type: list
+              label: Additional fields
+              help: 'These fields (whose key will be prefixed with an underscore) will be appended to every GELF log message. Useful for tokens, like X-OVH-TOKEN.'
+              type: list
+              fields:
+                .key:
+                  type: text
+                  label: Key
+                .value:
+                  type: text
+                  label: Value
+            .level:
+              type: select
+              label: Level
+              default: INFO
+              data-options@: Grav\Plugin\LoggerChannels\Utils::levelsOptions

@@ -1,5 +1,15 @@
 <?php
 
+
+
+
+
+
+
+
+
+
+
 namespace Composer;
 
 use Composer\Semver\VersionParser;
@@ -19,11 +29,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '01515f085ee0f4958c41d6eb0dc8de0a6f3265e5',
+    'reference' => 'd1b51d972c58a69a7c491109203333cda015b15a',
     'name' => 'stephan-strate/logger-channels',
   ),
   'versions' => 
   array (
+    'graylog2/gelf-php' => 
+    array (
+      'pretty_version' => '1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '16cab667fa01e6e298af1ec3279fe08d43e40a96',
+    ),
     'guzzlehttp/guzzle' => 
     array (
       'pretty_version' => '7.2.0',
@@ -78,6 +97,15 @@ private static $installed = array (
       ),
       'reference' => '2209ddd84e7ef1256b7af205d0717fb62cfc9c33',
     ),
+    'paragonie/constant_time_encoding' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f34c2b11eb9d2c9318e13540a1dbc2a3afbd939c',
+    ),
     'psr/http-client' => 
     array (
       'pretty_version' => '1.0.1',
@@ -124,6 +152,7 @@ private static $installed = array (
       'provided' => 
       array (
         0 => '1.0.0',
+        1 => '~1.0',
       ),
     ),
     'ralouphie/getallheaders' => 
@@ -142,7 +171,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '01515f085ee0f4958c41d6eb0dc8de0a6f3265e5',
+      'reference' => 'd1b51d972c58a69a7c491109203333cda015b15a',
     ),
   ),
 );
