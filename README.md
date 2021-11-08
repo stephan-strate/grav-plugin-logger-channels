@@ -5,6 +5,7 @@ The **Logger Channels** Plugin is an extension for [Grav CMS](http://github.com/
 We currently support the following handlers (more can be added through pull requests):
 - Discord
 - Telegram
+- Graylog
 
 ## Installation
 
@@ -69,6 +70,7 @@ Handlers can be interpreted as targets for your log messages. They can usually b
 Supported handlers:
 - Discord
 - Telegram
+- Graylog
 
 #### Discord
 
@@ -101,6 +103,7 @@ handlers.telegram:
 
 - Discord: https://github.com/lefuturiste/monolog-discord-handler
 - Telegram: https://github.com/merorafael/monolog-telegram-handler
+- Graylog: https://github.com/bzikarsky/gelf-php
 
 ## Known Limitations
 
