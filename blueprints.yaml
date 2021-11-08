@@ -121,3 +121,8 @@ form:
                 .value:
                   type: text
                   label: Value
+            .level:
+              type: select
+              label: Level
+              default: INFO
+              data-options@: Grav\Plugin\LoggerChannels\Utils::levelsOptions
