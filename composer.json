@@ -2,7 +2,12 @@
     "name": "stephan-strate/logger-channels",
     "type": "grav-plugin",
     "description": "Add or replace logger handlers and targets for any grav system",
-    "keywords": ["plugin", "grav", "log", "monolog"],
+    "keywords": [
+        "plugin",
+        "grav",
+        "log",
+        "monolog"
+    ],
     "homepage": "https://github.com/stephan-strate/grav-plugin-logger-channels",
     "license": "MIT",
     "authors": [
@@ -14,14 +19,16 @@
     ],
     "require": {
         "php": ">=7.1.3",
-        "lefuturiste/monolog-discord-handler": "^0.2.1",
         "mero/telegram-handler": "^0.3.1",
-        "graylog2/gelf-php": "^1.7.0"
+        "graylog2/gelf-php": "^1.7.0",
+        "stephan-strate/monolog-discord": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "Grav\\Plugin\\LoggerChannels\\": "classes/"
         },
-        "classmap":  ["logger-channels.php"]
+        "classmap": [
+            "logger-channels.php"
+        ]
     }
 }

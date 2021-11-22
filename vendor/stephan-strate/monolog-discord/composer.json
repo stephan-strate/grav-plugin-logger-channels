@@ -1,0 +1,43 @@
+{
+    "name": "stephan-strate/monolog-discord",
+    "type": "library",
+    "description": "Monolog handler to support Discord webhooks as log target",
+    "keywords": [
+        "monolog",
+        "discord",
+        "logging",
+        "log"
+    ],
+    "homepage": "https://github.com/stephan-strate/monolog-discord",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephan Strate",
+            "email": "hello@stephan.codes",
+            "homepage": "https://stephan.codes",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "monolog/monolog": "*",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.2 || ^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Strate\\Monolog\\Handler\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Strate\\Monolog\\Handler\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}

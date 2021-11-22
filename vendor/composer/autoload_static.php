@@ -6,19 +6,14 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
 {
-    public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Strate\\Monolog\\Handler\\' => 23,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
-            'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
         'M' => 
@@ -28,30 +23,19 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
         ),
         'G' => 
         array (
-            'GuzzleHttp\\Psr7\\' => 16,
-            'GuzzleHttp\\Promise\\' => 19,
-            'GuzzleHttp\\' => 11,
             'Grav\\Plugin\\LoggerChannels\\' => 27,
             'Gelf\\' => 5,
-        ),
-        'D' => 
-        array (
-            'DiscordHandler\\' => 15,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Strate\\Monolog\\Handler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stephan-strate/monolog-discord/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Psr\\Http\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'ParagonIE\\ConstantTime\\' => 
         array (
@@ -65,18 +49,6 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
         array (
             0 => __DIR__ . '/..' . '/mero/telegram-handler/src/Mero/Monolog',
         ),
-        'GuzzleHttp\\Psr7\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
-        ),
-        'GuzzleHttp\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
-        ),
-        'GuzzleHttp\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
-        ),
         'Grav\\Plugin\\LoggerChannels\\' => 
         array (
             0 => __DIR__ . '/../..' . '/classes',
@@ -84,10 +56,6 @@ class ComposerStaticInitc9e805381b439a3f2dd1626dad67519e
         'Gelf\\' => 
         array (
             0 => __DIR__ . '/..' . '/graylog2/gelf-php/src/Gelf',
-        ),
-        'DiscordHandler\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/lefuturiste/monolog-discord-handler/src',
         ),
     );
 
