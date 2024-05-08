@@ -1,6 +1,9 @@
 # Unreleased
 ## mm/dd/yyyy
 
+1. [](#bugfix)
+    * Duplicate keys in blueprints.yaml [#6](https://github.com/stephan-strate/grav-plugin-logger-channels/pull/6)
+
 # v1.1.1
 ## 11/22/2021
 

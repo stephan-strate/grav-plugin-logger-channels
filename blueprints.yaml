@@ -101,7 +101,7 @@ form:
               validate:
                 type: number
                 min: 1
-                min: 65535
+                max: 65535
             .protocol:
               type: select
               label: Protocol
@@ -113,7 +113,6 @@ form:
               type: list
               label: Additional fields
               help: 'These fields (whose key will be prefixed with an underscore) will be appended to every GELF log message. Useful for tokens, like X-OVH-TOKEN.'
-              type: list
               fields:
                 .key:
                   type: text
